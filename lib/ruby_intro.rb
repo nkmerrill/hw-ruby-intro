@@ -11,7 +11,17 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  #edge cases
+  if arr.empty?
+    return 0
+  end
+  
+  if arr.length == 1
+    return arr[0]
+  end
+
+  sarr = arr.sort()
+  return sarr[-1] + sarr[-2]
 end
 
 def sum_to_n? arr, n
