@@ -55,11 +55,57 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  #verify input is a binary number
+  if !!(s.match /[^01]/) or s.empty?
+    return false
+  end
+
+  #if all values are 0, then it is a multiple of 4.
+  if !(s.match /1/)
+    return true
+  end
+
+  #string must be at least length 3 in order to be a multiple of 4
+  if s.length < 3
+    return false
+  end
+
+  #if the string ends in 00, then it is a multiple of 4
+  if !!(s.match /00\Z/)
+    return true
+  end
+
+  return false
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn, price)
+
+    #check input validity
+    if !isbn.is_a?(String) or isbn.empty? or !price.is_a?(Float) or price <= 0
+      raise ArgumentError
+    end
+
+    @isbn = isbn
+    @price = price
+  end
+
+  def isbn
+    @isbn
+  end
+
+  def isbn=(isbn)
+    @isbn = isbn
+  end
+
+  def price
+    @price
+  end
+
+  def price=(price)
+    @price = price
+  end
+
 end
