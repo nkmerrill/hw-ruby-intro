@@ -2,8 +2,12 @@
 
 # Part 1
 
-def sum arr
-  # YOUR CODE HERE
+def sum arr  
+  output = 0
+  arr.each do |val| 
+    output += val
+  end
+  return output
 end
 
 def max_2_sum arr
