@@ -84,12 +84,16 @@ class BookInStock
   def initialize(isbn, price)
 
     #check input validity
-    if !isbn.is_a?(String) or isbn.empty? or !price.is_a?(Float) or price <= 0
+    if isbn.empty? or price <= 0
       raise ArgumentError
     end
 
     @isbn = isbn
     @price = price
+  end
+
+  def price_as_string()
+    return "$%0.2f" % [@price]
   end
 
   def isbn
@@ -107,5 +111,4 @@ class BookInStock
   def price=(price)
     @price = price
   end
-
 end
