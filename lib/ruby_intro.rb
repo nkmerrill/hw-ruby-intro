@@ -51,7 +51,7 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return !!(s.match /\A[^\W0-9aeiouAEIOU]/)
 end
 
 def binary_multiple_of_4? s
