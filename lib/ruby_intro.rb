@@ -25,7 +25,23 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  #edge cases
+  if arr.empty? or arr.length == 1
+    return false
+  end
+
+  #Use hash table to compare values in the array
+  sumTable = Hash.new
+  arr.each_with_index do |val, index|
+    sumTable[n - val] = index
+  end
+
+  arr.each_with_index do |val, index|
+    if sumTable.has_key?(val) and sumTable[val] != index
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
